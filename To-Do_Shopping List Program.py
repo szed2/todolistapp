@@ -15,6 +15,7 @@ def output_items():
             for item in file:
                 print(item.strip())
             print("-----------------------------")
+            print("If using VSCODE, the time is in GMT+8. If using Trinket, the time is in GMT")
     except FileNotFoundError:
         with open("shopping.txt", "w") as file:
             pass  # Create an empty file if it doesn't exist
