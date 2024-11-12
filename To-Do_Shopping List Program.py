@@ -1,13 +1,13 @@
 import datetime
-
+#Title of program
 print("Welcome to the To-Do/Shopping List program!")
-
+#Add item
 def add_item():
     new_item = input("Enter the item to add to the list: ")
     current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open("shopping.txt", "a") as file:
         file.write(f"{current_time} - {new_item}\n")
-
+#Output item
 def output_items():
     try:
         with open("shopping.txt", "r") as file:
@@ -19,7 +19,7 @@ def output_items():
     except FileNotFoundError:
         with open("shopping.txt", "w") as file:
             pass  # Create an empty file if it doesn't exist
-
+#Sort items by alphabet
 def sort_items_alphabetically():
     try:
         with open("shopping.txt", "r") as file:
@@ -31,7 +31,7 @@ def sort_items_alphabetically():
     except FileNotFoundError:
         with open("shopping.txt", "w") as file:
             pass  # Create an empty file if it doesn't exist
-
+#Sort items by date
 def sort_items_by_date():
     try:
         with open("shopping.txt", "r") as file:
@@ -43,7 +43,7 @@ def sort_items_by_date():
     except FileNotFoundError:
         with open("shopping.txt", "w") as file:
             pass  # Create an empty file if it doesn't exist
-
+#Tick item
 def tick_item():
     item_to_tick = input("Enter the item to tick off: ")
     with open("shopping.txt", "r+") as file:
@@ -54,7 +54,7 @@ def tick_item():
                 file.write(line)
         file.truncate()
         print(f"Item '{item_to_tick}' ticked off.")
-
+#Lets user choose
 while True:
     print("\nWhat would you like to do?")
     print("1. Add an item")
