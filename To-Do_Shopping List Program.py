@@ -45,6 +45,7 @@ def sort_items_by_date():
             pass  # Create an empty file if it doesn't exist
 #Tick item
 def tick_item():
+    print("Use Ctrl,Shift,V to paste the items you want to tick on Windows, and use Command,Shift,V to paste the items you want to tick on MacOS.")    
     item_to_tick = input("Enter the item to tick off: ")
     with open("shopping.txt", "r+") as file:
         lines = file.readlines()
